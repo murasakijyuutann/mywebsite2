@@ -1,117 +1,222 @@
-/*style.css*/
-/* 共通設定 */
-
-*{
-    margin: 0;
-    padding: 0;
-  
+body {
+  font-family: "Meiryo", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfd;
+  color: #333;
 }
 
-/* モバイル向け */
-
-.container{
-    width: 100%;
-    margin: 0 auto;  
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/*　ヘッダ設定　*/
-header{
-    height: 320px;
+/* Navbar */
+header nav {
+  background: #23d4e0;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-header nav{
-    height: 60px;
-    background-color: #23d4e0;
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.main-image img{
-    width : 780px;
-    height: 260px;
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Hero image */
+.main-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+/* Sections */
+main section {
+  margin: 40px 0;
+}
+
+h1, h2 {
+  color: #444;
+}
+
+/* Menu */
+#menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+#menu ul li {
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Contact form */
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+}
+
+#contact input, 
+#contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#contact button {
+  padding: 10px;
+  background: #23d4e0;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#contact button:hover {
+  background: #1aa8b5;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+  color: #777;
+}
+
+footer a {
+  color: #23d4e0;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+    .main-image img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    #contact form {
+        width: 100%;
+        max-width: none;
+        padding: 0 10px;
+    }
+
+    #contact input,
+    #contact textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    #contact button {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}
+
+/* Additional styling for images in sections */
+section img {
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
 }
 
-nav ul{
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-nav ul li{
-    margin: 0 15px;
-    display: inline-block;
-    line-height: 60px;
-    padding: 0 20px 20px;
-}
-
-nav ul li a{
-    text-decoration: none;
-    color: white;
-    font-family: "meiryo";
-    font-weight: bold;
-    font-size: 18px;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-section{
-    height : 320px;
-    padding: 10px 5%
-}
-section .intro-content{
-    font-size: 24px;
-    font-weight: bold;
-    font-family: "meiryo";
-    margin: 20px 0;
-}
-
-section p{ line-height: 2.5;}
-section .intro-image img{
-    display: none;
-}
-
-section .intro-description{
-    font-size: 16px;
-    font-weight: normal;
-    margin-top: 10px;
-    line-height: 1.8;
-}
-
-@media screen and (min-width: 768px) {
-    .container{
-        width: 780px;
-    }
-    
-    header{
-        height: 360px;
-    }
-
-    header .main-image img{
-        height: 300px;
-    }
-
-    section {
-        height: 400px;
-        padding: 20px 5%;
-    }
-
-    section .intro-content .intro-image{
-        display: block;
-        float: right;
-        width: 40%;
-    }
-
-    section .intro-image img{
-        display: block;
-    }
-
-    section .intro-image img{
-        width: 100%;
-        height: auto;
+/* screen size for tablets*/
+@media screen and (max-width: 768px) {
+    .main-image img {
+        height: 250px;
         object-fit: cover;
+
     }
+    #contact form {
+        padding: 0 10px;
+    }
+    #contact input,
+    #contact textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        max-width: none;
+        object-fit: cover;
+
+    }
+
+    #contact button {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        object-fit: cover;
+
+
+    }
+}
+
+/* screen size for large desktops */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        padding: 0 20px;
+    }
+
+    .main-image img {
+        height: 400px;
+        object-fit: cover;
+
+    }
+
+    #contact form {
+        width: 100%;
+        max-width: 600px;
+        padding: 0 10px;
+    }
+    #contact input,
+    #contact textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        max-width: none;
+        object-fit: cover;
+        
+
+    }
+
+    #contact button {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        object-fit: cover;
+
+
+    }
+
+
 }
